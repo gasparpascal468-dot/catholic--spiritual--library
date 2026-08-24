@@ -226,5 +226,45 @@ function searchWebsite() {
 }
 
 </script>
+<script>
+
+const verses = [
+
+    {
+        text: "I am the way, and the truth, and the life.",
+        reference: "John 14:6"
+    },
+
+    {
+        text: "The Lord is my shepherd; I shall not want.",
+        reference: "Psalm 23:1"
+    },
+
+    {
+        text: "With God all things are possible.",
+        reference: "Matthew 19:26"
+    },
+
+    {
+        text: "Let all that you do be done in love.",
+        reference: "1 Corinthians 16:14"
+    }
+
+];
+
+function changeVerse() {
+
+    const random =
+        Math.floor(Math.random() * verses.length);
+
+    document.getElementById("verseText").innerText =
+        '"' + verses[random].text + '"';
+
+    document.getElementById("verseReference").innerText =
+        "— " + verses[random].reference;
+
+}
+
+</script>
 </body>
 </html>
