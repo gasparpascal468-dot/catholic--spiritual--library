@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration | Catholic Faith</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            ✝️ Catholic Faith
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sacraments.html">Sacraments</a></li>
+            <li><a href="saints.html">Saints</a></li>
+            <li><a href="prayers.html">Prayers</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<section class="page-header">
+
+    <h1>Registration</h1>
+
+    <p>
+        Join our Catholic community.
+    </p>
+
+</section>
+
+
+<section class="registration-section">
+
+    <form class="registration-form">
+
+        <h2>Community Registration</h2>
+
+        <p class="form-intro">
+            Please provide your information below.
+        </p>
+
+        <label>Full Name</label>
+
+        <input
+            type="text"
+            placeholder="Enter your full name"
+            required
+        >
+
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            placeholder="Enter your email"
+            required
+        >
+
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            placeholder="Enter your phone number"
+            required
+        >
+
+
+        <label>Date of Birth</label>
+
+        <input
+            type="date"
+            required
+        >
+
+
+        <label>Gender</label>
+
+        <select required>
+
+            <option value="">Select Gender</option>
+
+            <option>Male</option>
+
+            <option>Female</option>
+
+        </select>
+
+
+        <label>Parish</label>
+
+        <input
+            type="text"
+            placeholder="Enter your parish"
+            required
+        >
+
+
+        <label>Registration Type</label>
+
+        <select required>
+
+            <option value="">Select an option</option>
+
+            <option>New Member</option>
+
+            <option>Baptism</option>
+
+            <option>Confirmation</option>
+
+            <option>Marriage</option>
+
+            <option>Other</option>
+
+        </select>
+
+
+        <label>Message</label>
+
+        <textarea
+            rows="5"
+            placeholder="Additional information"
+        ></textarea>
+
+
+        <button type="submit">
+            Submit Registration
+        </button>
+
+    </form>
+
+</section>
+
+
+<footer>
+
+    <h3>✝️ Catholic Faith</h3>
+
+    <p>
+        Faith • Hope • Love
+    </p>
+
+    <p>
+        © 2026 Catholic Faith
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document
+        .querySelector(".nav-links")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
