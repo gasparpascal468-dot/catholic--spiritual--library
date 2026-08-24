@@ -178,20 +178,89 @@ function toggleMenu() {
 }
 
 </script>
-<script>
-
 const form = document.getElementById("registrationForm");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-    alert(
-        "Registration received! Backend connection will be added in the next phase."
-    );
+    const formData = {
+
+        fullName: form.querySelector(
+            'input[type="text"]'
+        ).value,
+
+        email: form.querySelector(
+            'input[type="email"]'
+        ).value,
+
+        phone: form.querySelector(
+            'input[type="tel"]'
+        ).value,
+
+        dateOfBirth: form.querySelector(
+            'input[type="date"]'
+        ).value,
+
+        gender: form.querySelectorAll("select")[0].value,
+
+        parish: form.querySelectorAll(
+            'input[type="text"]'
+        )[1].value,
+
+        registrationType: form.querySelectorAll(
+            "select"
+        )[1].value,
+
+        message: form.querySelector("textarea").value
+
+    };
+
+
+    try {
+
+        const response = await fetch(
+            "YOUR_RENDER_BACKEND_URL/api/registrations",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(formData)
+            }
+        );
+
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            alert(
+                "Registration submitted successfully! ✝️"
+            );
+
+            form.reset();
+
+        } else {
+
+            alert(
+                "Registration failed. Please try again."
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to connect to the server."
+        );
+
+    }
 
 });
-
-</script>
 </body>
 </html>
