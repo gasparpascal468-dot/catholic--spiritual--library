@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const Registration = mongoose.model(
     "Registration",
@@ -23,9 +24,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Serve your website files
+app.use(express.static(__dirname));
 
 // MongoDB connection
-
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB connected successfully");
@@ -34,20 +36,12 @@ mongoose.connect(process.env.MONGODB_URI)
         console.error("MongoDB connection failed:", error);
     });
 
-
-// Home route
-
+// Homepage - show the Catholic website
 app.get("/", (req, res) => {
-
-    res.json({
-        message: "Catholic Faith API is running successfully ✝️"
-    });
-
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-
 // Registration route
-
 app.post("/api/registrations", async (req, res) => {
 
     try {
@@ -81,9 +75,14 @@ app.post("/api/registrations", async (req, res) => {
 
 });
 
+// API test
+app.get("/api", (req, res) => {
+    res.json({
+        message: "Catholic Faith API is running successfully ✝️"
+    });
+});
 
 // Start server
-
 app.listen(PORT, () => {
 
     console.log(
