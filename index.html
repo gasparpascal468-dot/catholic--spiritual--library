@@ -153,5 +153,55 @@ function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
+<script>
+
+function searchWebsite() {
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const message =
+        document.getElementById("searchMessage");
+
+    if (search === "") {
+
+        message.innerHTML = "";
+
+        return;
+    }
+
+    if (search.includes("saint")) {
+
+        message.innerHTML =
+        "👼 Visit our Saints page to discover Catholic saints.";
+
+    } else if (search.includes("sacrament")) {
+
+        message.innerHTML =
+        "✝️ Visit our Sacraments page to learn about the seven sacraments.";
+
+    } else if (search.includes("prayer")) {
+
+        message.innerHTML =
+        "🙏 Visit our Prayers page to discover Catholic prayers.";
+
+    } else if (search.includes("book")) {
+
+        message.innerHTML =
+        "📚 Visit our Books page for spiritual resources.";
+
+    } else {
+
+        message.innerHTML =
+        "No result found. Try Saints, Sacraments, Prayers or Books.";
+
+    }
+
+}
+
+</script>
 </body>
 </html>
