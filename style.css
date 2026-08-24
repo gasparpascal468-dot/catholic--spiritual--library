@@ -610,3 +610,48 @@ footer p {
     font-weight: bold;
     cursor: pointer;
 }
+.prayer-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #111111;
+}
+
+.prayer-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.prayer-label {
+    color: #d4af37;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.prayer-container h2 {
+    font-size: 35px;
+    margin: 15px 0 20px;
+}
+
+.prayer-container p {
+    color: #cccccc;
+    font-size: 18px;
+}
+
+.prayer-container button {
+    margin-top: 25px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #d4af37;
+    color: #000;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#copyMessage {
+    margin-top: 15px;
+    color: #d4af37;
+}
