@@ -178,6 +178,20 @@ function toggleMenu() {
 }
 
 </script>
+<script>
 
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Registration received! Backend connection will be added in the next phase."
+    );
+
+});
+
+</script>
 </body>
 </html>
