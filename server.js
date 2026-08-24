@@ -21,7 +21,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log("MongoDB connected successfully");
+    })
+    .catch((error) => {
+        console.error("MongoDB connection failed:", error);
+    });
 app.get("/", (req, res) => {
     res.json({
         message: "Catholic Faith API is running successfully ✝️"
