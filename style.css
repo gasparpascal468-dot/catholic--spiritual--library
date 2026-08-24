@@ -504,3 +504,61 @@ footer p {
     }
 
 }
+.search-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.search-section h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 16px;
+
+    background: #151515;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+
+    font-size: 16px;
+}
+
+#searchMessage {
+    margin-top: 20px;
+    color: #cccccc;
+}
+.search-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.search-section h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 16px;
+
+    background: #151515;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+
+    font-size: 16px;
+}
+
+#searchMessage {
+    margin-top: 20px;
+    color: #cccccc;
+}
