@@ -294,5 +294,24 @@ function changeVerse() {
 }
 
 </script>
+<script>
+
+function copyPrayer() {
+
+    const prayer =
+    `Lord, guide my thoughts, my words and my actions.
+Help me to follow Your will, to love others,
+and to remain faithful in every situation.
+Give me wisdom, strength and peace each day.
+Amen.`;
+
+    navigator.clipboard.writeText(prayer);
+
+    document.getElementById("copyMessage").innerText =
+        "✓ Prayer copied successfully.";
+
+}
+
+</script>
 </body>
 </html>
