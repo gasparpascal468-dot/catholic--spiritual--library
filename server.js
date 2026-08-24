@@ -1,5 +1,19 @@
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
+const Registration = mongoose.model(
+    "Registration",
+    new mongoose.Schema({
+        fullName: String,
+        email: String,
+        phone: String,
+        dateOfBirth: String,
+        gender: String,
+        parish: String,
+        registrationType: String,
+        message: String
+    })
+);
 
 const app = express();
 
@@ -13,39 +27,28 @@ app.get("/", (req, res) => {
         message: "Catholic Faith API is running successfully ✝️"
     });
 });
+app.post("/api/registrations", async (req, res) => {
 
-app.post("/api/registrations", (req, res) => {
+    try {
 
-    const {
-        fullName,
-        email,
-        phone,
-        dateOfBirth,
-        gender,
-        parish,
-        registrationType,
-        message
-    } = req.body;
+        const registration =
+            await Registration.create(req.body);
 
-    console.log("New registration:");
-    console.log(req.body);
+        res.json({
+            success: true,
+            message: "Registration saved successfully.",
+            id: registration._id
+        });
 
-    res.json({
-        success: true,
-        message: "Registration received successfully.",
-        data: {
-            fullName,
-            email,
-            phone,
-            dateOfBirth,
-            gender,
-            parish,
-            registrationType,
-            message
-        }
-    });
-});
+    } catch (error) {
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+        console.error(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Could not save registration."
+        });
+
+    }
+
 });
