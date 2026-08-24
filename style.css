@@ -655,3 +655,67 @@ footer p {
     margin-top: 15px;
     color: #d4af37;
 }
+/* CHURCH DIRECTORY */
+
+.churches {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.church-card {
+    background: #151515;
+    padding: 35px 25px;
+
+    border-radius: 18px;
+    border: 1px solid #292929;
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.church-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.church-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.church-card h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.church-card p {
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.church-card a {
+    display: inline-block;
+    margin-top: 15px;
+
+    color: #d4af37;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .churches {
+        grid-template-columns: 1fr;
+    }
+
+}
