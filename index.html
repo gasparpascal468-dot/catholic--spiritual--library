@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Catholic Spiritual Library - Discover Catholic faith, Bible, saints, prayers, sacraments and spiritual resources.">
+
+  <title>Catholic Spiritual Library</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f8fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 18, 38, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-cross {
+      font-size: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 13, 29, 0.96),
+          rgba(7, 25, 54, 0.82),
+          rgba(7, 25, 54, 0.42)
+        ),
+        url("https://images.unsplash.com/photo-1548625361-ec85e3a3f1b5?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 80px 5%;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #d4af37;
+      border-radius: 30px;
+      color: #d4af37;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #e6e9ef;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #10182b;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #e4c45b;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #10182b;
+    }
+
+    /* =========================
+       QUICK CARDS
+    ========================== */
+
+    .quick-section {
+      max-width: 1200px;
+      margin: -60px auto 0;
+      padding: 0 5%;
+      position: relative;
+      z-index: 5;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .quick-card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .quick-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .quick-card h3 {
+      color: #10254a;
+      margin-bottom: 5px;
+    }
+
+    .quick-card p {
+      color: #697386;
+      font-size: 14px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 90px 5%;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title .small-title {
+      color: #b08c1d;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 46px);
+      color: #10254a;
+      margin: 8px 0 12px;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: auto;
+      color: #6c7483;
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 24px;
+      border: 1px solid #e7e9ef;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      border-color: #d4af37;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      color: #142a51;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #697386;
+      font-size: 14px;
+    }
+
+    .feature-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: #b08c1d;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* =========================
+       GOSPEL
+    ========================== */
+
+    .gospel {
+      background: #0b1933;
+      color: white;
+    }
+
+    .gospel-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 50px 30px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .gospel-box h2 {
+      color: #d4af37;
+      margin: 10px 0 20px;
+    }
+
+    .gospel-verse {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .gospel-reference {
+      color: #cbd3df;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       SAINTS
+    ========================== */
+
+    .saints-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .saint-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e7e9ef;
+      transition: 0.3s;
+    }
+
+    .saint-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .saint-image {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(
+          135deg,
+          #172f59,
+          #b08c1d
+        );
+      color: white;
+      font-size: 70px;
+    }
+
+    .saint-info {
+      padding: 20px;
+    }
+
+    .saint-info h3 {
+      color: #132b53;
+      margin-bottom: 5px;
+    }
+
+    .saint-info p {
+      color: #737b8b;
+      font-size: 13px;
+    }
+
+    /* =========================
+       PRAYER
+    ========================== */
+
+    .prayer-section {
+      background: #f0f2f6;
+    }
+
+    .prayer-box {
+      background: white;
+      max-width: 900px;
+      margin: auto;
+      padding: 45px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
+
+    .prayer-box .cross {
+      color: #b08c1d;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .prayer-box h3 {
+      color: #132b53;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .prayer-box p {
+      color: #697386;
+      max-width: 700px;
+      margin: auto;
+      font-style: italic;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #071226;
+      color: white;
+      padding: 65px 5% 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand h2 {
+      color: #d4af37;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      color: #b9c1ce;
+      max-width: 400px;
+      font-size: 14px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #d4af37;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 9px;
+    }
+
+    footer a {
+      color: #c2c8d2;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #d4af37;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 50px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: #8892a3;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #071226;
+        flex-direction: column;
+        padding: 25px 5%;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .saints-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 82vh;
+      }
+
+      .hero-content {
+        padding-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .saints-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prayer-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        <span class="logo-cross">✝</span>
+        Catholic Spiritual Library
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#faith">Faith</a></li>
+        <li><a href="#bible">Bible</a></li>
+        <li><a href="#saints">Saints</a></li>
+        <li><a href="#sacraments">Sacraments</a></li>
+        <li><a href="#prayers">Prayers</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        ✝ Catholic Spiritual & Information Platform
+      </div>
+
+      <h1>
+        Discover the
+        <span>Catholic Faith</span>
+      </h1>
+
+      <p>
+        Explore Catholic teachings, Scripture, prayers, saints,
+        sacraments, liturgy and spiritual resources in one place.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#faith" class="btn btn-primary">
+          Explore the Faith
+        </a>
+
+        <a href="#bible" class="btn btn-outline">
+          Read Today's Gospel
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       QUICK INFORMATION
+  ========================== -->
+
+  <div class="quick-section">
+
+    <div class="quick-grid">
+
+      <div class="quick-card">
+        <div class="quick-icon">📖</div>
+        <h3>Today's Gospel</h3>
+        <p>Reflect on God's Word and grow in faith.</p>
+      </div>
+
+      <div class="quick-card">
+        <div class="quick-icon">👑</div>
+        <h3>Saint of the Day</h3>
+        <p>Discover the life and witness of the saints.</p>
+      </div>
+
+      <div class="quick-card">
+        <div class="quick-icon">📅</div>
+        <h3>Liturgical Calendar</h3>
+        <p>Discover today's Catholic celebration.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       FAITH
+  ========================== -->
+
+  <section id="faith">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <div class="small-title">Explore</div>
+        <h2>The Catholic Faith</h2>
+        <p>
+          Learn about Catholic beliefs, traditions, teachings
+          and the life of the Church.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">⛪</div>
+          <h3>Catholicism</h3>
+          <p>
+            Discover what Catholics believe and how the Church
+            lives its mission.
+          </p>
+          <a href="#" class="feature-link">Learn More →</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📜</div>
+          <h3>Catechism</h3>
+          <p>
+            Explore the teachings and doctrine of the Catholic Church.
+          </p>
+          <a href="#" class="feature-link">Explore →</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">✝️</div>
+          <h3>The Creed</h3>
+          <p>
+            Learn about the fundamental profession of Catholic faith.
+          </p>
+          <a href="#" class="feature-link">Discover →</a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🕊️</div>
+          <h3>Catholic Life</h3>
+          <p>
+            Learn how faith, prayer and Christian living work together.
+          </p>
+          <a href="#" class="feature-link">Explore →</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GOSPEL
+  ========================== -->
+
+  <section class="gospel" id="bible">
+
+    <div class="gospel-box">
+
+      <div>📖</div>
+
+      <h2>Today's Gospel</h2>
+
+      <p class="gospel-verse">
+        "I am the bread of life; whoever comes to me
+        shall not hunger."
+      </p>
+
+      <p class="gospel-reference">
+        John 6:35
+      </p>
+
+      <a href="#" class="btn btn-primary">
+        Read the Gospel
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SACRAMENTS
+  ========================== -->
+
+  <section id="sacraments">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <div class="small-title">Catholic Life</div>
+        <h2>The Seven Sacraments</h2>
+        <p>
+          Discover the meaning and importance of the seven
+          sacraments of the Catholic Church.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">💧</div>
+          <h3>Baptism</h3>
+          <p>
+            The sacrament of initiation into Christian life.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>Confirmation</h3>
+          <p>
+            Strengthened by the Holy Spirit in Christian faith.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🍞</div>
+          <h3>Eucharist</h3>
+          <p>
+            The celebration and reception of the Body and Blood of Christ.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🙏</div>
+          <h3>Reconciliation</h3>
+          <p>
+            The sacrament of forgiveness and conversion.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🕯️</div>
+          <h3>Anointing of the Sick</h3>
+          <p>
+            A sacrament of comfort, strength and prayer for the sick.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⛪</div>
+          <h3>Holy Orders</h3>
+          <p>
+            The sacrament through which ordained ministry is conferred.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💍</div>
+          <h3>Matrimony</h3>
+          <p>
+            The sacramental covenant between husband and wife.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SAINTS
+  ========================== -->
+
+  <section id="saints" class="prayer-section">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <div class="small-title">Witnesses of Faith</div>
+        <h2>Featured Saints</h2>
+        <p>
+          Learn from the lives, virtues and witness of Catholic saints.
+        </p>
+      </div>
+
+      <div class="saints-grid">
+
+        <div class="saint-card">
+          <div class="saint-image">👑</div>
+          <div class="saint-info">
+            <h3>Saint Mary</h3>
+            <p>Mother of Jesus and model of faith.</p>
+          </div>
+        </div>
+
+        <div class="saint-card">
+          <div class="saint-image">✝️</div>
+          <div class="saint-info">
+            <h3>Saint Joseph</h3>
+            <p>Guardian of Jesus and husband of Mary.</p>
+          </div>
+        </div>
+
+        <div class="saint-card">
+          <div class="saint-image">🕊️</div>
+          <div class="saint-info">
+            <h3>Saint Francis</h3>
+            <p>Known for humility, poverty and love of creation.</p>
+          </div>
+        </div>
+
+        <div class="saint-card">
+          <div class="saint-image">📖</div>
+          <div class="saint-info">
+            <h3>Saint Augustine</h3>
+            <p>One of the great teachers of the Church.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PRAYERS
+  ========================== -->
+
+  <section id="prayers">
+
+    <div class="section-container">
+
+      <div class="section-title">
+        <div class="small-title">Prayer</div>
+        <h2>Prayer Library</h2>
+        <p>
+          Build your daily relationship with God through prayer.
+        </p>
+      </div>
+
+      <div class="prayer-box">
+
+        <div class="cross">✝</div>
+
+        <h3>Our Father</h3>
+
+        <p>
+          Our Father, who art in heaven, hallowed be thy name.
+          Thy kingdom come. Thy will be done, on earth as it is
+          in heaven. Give us this day our daily bread and forgive
+          us our trespasses, as we forgive those who trespass
+          against us...
+        </p>
+
+        <br>
+
+        <a href="#" class="btn btn-primary">
+          Explore Prayers
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CALENDAR
+  ========================== -->
+
+  <section id="calendar" class="gospel">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="small-title" style="color:#d4af37;">
+          Catholic Liturgy
+        </div>
+
+        <h2 style="color:white;">
+          Liturgical Calendar
+        </h2>
+
+        <p style="color:#cbd3df;">
+          Follow the seasons, feast days and celebrations
+          of the Catholic Church.
+        </p>
+
+      </div>
+
+      <div class="quick-grid">
+
+        <div class="quick-card">
+          <div class="quick-icon">🕯️</div>
+          <h3>Advent</h3>
+          <p>Prepare your heart for the coming of Christ.</p>
+        </div>
+
+        <div class="quick-card">
+          <div class="quick-icon">✝️</div>
+          <h3>Lent</h3>
+          <p>A season of prayer, fasting and conversion.</p>
+        </div>
+
+        <div class="quick-card">
+          <div class="quick-icon">🌅</div>
+          <h3>Easter</h3>
+          <p>Celebrate the Resurrection of Jesus Christ.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <h2>✝ Catholic Spiritual Library</h2>
+
+        <p>
+          A digital platform created to help people discover,
+          understand and live the Catholic faith.
+        </p>
+
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+
+        <ul>
+          <li><a href="#faith">Faith</a></li>
+          <li><a href="#bible">Bible</a></li>
+          <li><a href="#saints">Saints</a></li>
+          <li><a href="#sacraments">Sacraments</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Spiritual</h3>
+
+        <ul>
+          <li><a href="#prayers">Prayers</a></li>
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#">Mass</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Platform</h3>
+
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Catholic Spiritual Library. All rights reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document.getElementById("navLinks")
+          .classList.remove("active");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
